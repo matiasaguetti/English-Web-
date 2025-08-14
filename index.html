@@ -48,8 +48,16 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/img/hero-sample.png" alt="Profesor dando clase online">
-      </div>
+  <picture>
+    <!-- Si más adelante generas WebP, añade aquí un <source> -->
+    <img
+      src="assets/img/hero-sample.png"
+      srcset="assets/img/hero-sample.png 1200w"
+      sizes="(min-width: 900px) 460px, 100vw"
+      width="1200" height="800"
+      alt="Profesor dando clase online">
+  </picture>
+</div>
     </div>
   </section>
 
