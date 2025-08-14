@@ -231,3 +231,53 @@ body{
 .text-center{text-align:center}
 .mt-12{margin-top:12px}
 .mb-12{margin-bottom:12px}
+/* --- Corrección hero: evitar overflow y forzar imagen responsiva --- */
+.hero {
+  /* opcional: mantener overflow visible si necesitas sombras, pero aquí no lo necesitamos */
+  /* overflow: hidden;  <-- no recomendado por defecto */
+}
+
+/* Use minmax(0, 1fr) para evitar overflow en grids con columnas fijas */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px; /* antes: 1fr 460px */
+  gap: 32px;
+  align-items: center;
+  /* asegura que el grid no cree bloques más anchos que su contenedor */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor de la imagen: permitir que la imagen se reduzca sin forzar el ancho */
+.hero-media {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Imagen: 100% dentro de su contenedor, sin causar overflow */
+.hero-media img,
+.hero-media picture,
+.hero-media video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* mantiene el recorte estético si el contenedor cambia ratio */
+  border-radius: 12px;
+}
+
+/* Asegurarse que el contenedor .wrap no genere overflow por padding (safe) */
+.wrap {
+  box-sizing: border-box;
+}
+
+/* Small screens: ya tenías media queries; mantenerlos */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* pasa a una sola columna en móvil */
+    gap: 20px;
+  }
+  .hero-media img { height: auto; object-fit: cover; }
+}
