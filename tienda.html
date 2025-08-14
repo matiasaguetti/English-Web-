@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cursos — Web English Center</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="Logo"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="cursos.html">Cursos</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Catálogo de cursos</h1>
+  <form class="filters" onsubmit="return false">
+    <label>
+      Nivel
+      <select id="filter-nivel">
+        <option value="">Todos</option>
+        <option value="A1">A1-A2 (Básico)</option>
+        <option value="B1">B1-B2 (Intermedio)</option>
+        <option value="C1">C1-C2 (Avanzado)</option>
+      </select>
+    </label>
+    <label>
+      Formato
+      <select id="filter-formato">
+        <option value="">Todos</option>
+        <option value="video">Vídeo</option>
+        <option value="audio">Audio</option>
+        <option value="pdf">PDF + ejercicios</option>
+      </select>
+    </label>
+    <button class="btn-outline" id="reset-filters">Limpiar</button>
+  </form>
+
+  <div class="cards-grid" id="catalog-list">
+    <!-- Repetir tarjetas por curso -->
+    <article class="card" data-nivel="A1" data-formato="video">
+      <img src="assets/img/course-thumb-1.jpg" alt="">
+      <div class="card-body">
+        <h3>Inglés básico A1-A2</h3>
+        <p>40 horas • 24 lecciones</p>
+        <p class="price">USD 49</p>
+        <a class="btn-outline" href="curso.html">Ver curso</a>
+      </div>
+    </article>
+    <!-- Más tarjetas... -->
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2025 Web English Center — Maqueta</p>
+  </div>
+</footer>
+</body>
+</html>
